@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: argocd
+  name: "{{ .Values.component.namespace }}"
   labels:
-    name: argocd
+    name: "{{ .Values.component.namespace }}"

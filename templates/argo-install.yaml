@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/name: applications.argoproj.io
     app.kubernetes.io/part-of: argocd
   name: applications.argoproj.io
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   group: argoproj.io
   names:
@@ -2225,6 +2226,7 @@ metadata:
     app.kubernetes.io/name: appprojects.argoproj.io
     app.kubernetes.io/part-of: argocd
   name: appprojects.argoproj.io
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   group: argoproj.io
   names:
@@ -2535,6 +2537,7 @@ metadata:
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
   name: argocd-application-controller
+  namespace: "{{ .Values.component.namespace }}"
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -2544,6 +2547,7 @@ metadata:
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
   name: argocd-dex-server
+  namespace: "{{ .Values.component.namespace }}"
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -2553,6 +2557,7 @@ metadata:
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/part-of: argocd
   name: argocd-redis
+  namespace: "{{ .Values.component.namespace }}"
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -2562,6 +2567,7 @@ metadata:
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
   name: argocd-server
+  namespace: "{{ .Values.component.namespace }}"
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -2571,6 +2577,7 @@ metadata:
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
   name: argocd-application-controller
+  namespace: "{{ .Values.component.namespace }}"
 rules:
 - apiGroups:
   - ""
@@ -2610,6 +2617,7 @@ metadata:
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
   name: argocd-dex-server
+  namespace: "{{ .Values.component.namespace }}"
 rules:
 - apiGroups:
   - ""
@@ -2629,6 +2637,7 @@ metadata:
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
   name: argocd-server
+  namespace: "{{ .Values.component.namespace }}"
 rules:
 - apiGroups:
   - ""
@@ -2672,6 +2681,7 @@ metadata:
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
   name: argocd-application-controller
+  namespace: "{{ .Values.component.namespace }}"
 rules:
 - apiGroups:
   - '*'
@@ -2692,6 +2702,7 @@ metadata:
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
   name: argocd-server
+  namespace: "{{ .Values.component.namespace }}"
 rules:
 - apiGroups:
   - '*'
@@ -2723,6 +2734,7 @@ metadata:
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
   name: argocd-application-controller
+  namespace: "{{ .Values.component.namespace }}"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2739,6 +2751,7 @@ metadata:
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
   name: argocd-dex-server
+  namespace: "{{ .Values.component.namespace }}"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2755,6 +2768,7 @@ metadata:
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/part-of: argocd
   name: argocd-redis
+  namespace: "{{ .Values.component.namespace }}"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2771,6 +2785,7 @@ metadata:
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
   name: argocd-server
+  namespace: "{{ .Values.component.namespace }}"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -2787,6 +2802,7 @@ metadata:
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
   name: argocd-application-controller
+  namespace: "{{ .Values.component.namespace }}"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -2804,6 +2820,7 @@ metadata:
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
   name: argocd-server
+  namespace: "{{ .Values.component.namespace }}"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -2820,6 +2837,7 @@ metadata:
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
   name: argocd-cm
+  namespace: "{{ .Values.component.namespace }}"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -2828,6 +2846,7 @@ metadata:
     app.kubernetes.io/name: argocd-cmd-params-cm
     app.kubernetes.io/part-of: argocd
   name: argocd-cmd-params-cm
+  namespace: "{{ .Values.component.namespace }}"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -2836,6 +2855,7 @@ metadata:
     app.kubernetes.io/name: argocd-gpg-keys-cm
     app.kubernetes.io/part-of: argocd
   name: argocd-gpg-keys-cm
+  namespace: "{{ .Values.component.namespace }}"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -2844,6 +2864,7 @@ metadata:
     app.kubernetes.io/name: argocd-rbac-cm
     app.kubernetes.io/part-of: argocd
   name: argocd-rbac-cm
+  namespace: "{{ .Values.component.namespace }}"
 ---
 apiVersion: v1
 data:
@@ -2861,6 +2882,7 @@ metadata:
     app.kubernetes.io/name: argocd-ssh-known-hosts-cm
     app.kubernetes.io/part-of: argocd
   name: argocd-ssh-known-hosts-cm
+  namespace: "{{ .Values.component.namespace }}"
 ---
 apiVersion: v1
 data: null
@@ -2870,6 +2892,7 @@ metadata:
     app.kubernetes.io/name: argocd-tls-certs-cm
     app.kubernetes.io/part-of: argocd
   name: argocd-tls-certs-cm
+  namespace: "{{ .Values.component.namespace }}"
 ---
 apiVersion: v1
 kind: Secret
@@ -2878,6 +2901,7 @@ metadata:
     app.kubernetes.io/name: argocd-secret
     app.kubernetes.io/part-of: argocd
   name: argocd-secret
+  namespace: "{{ .Values.component.namespace }}"
 type: Opaque
 ---
 apiVersion: v1
@@ -2888,6 +2912,7 @@ metadata:
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
   name: argocd-dex-server
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   ports:
   - name: http
@@ -2913,6 +2938,7 @@ metadata:
     app.kubernetes.io/name: argocd-metrics
     app.kubernetes.io/part-of: argocd
   name: argocd-metrics
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   ports:
   - name: metrics
@@ -2930,6 +2956,7 @@ metadata:
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/part-of: argocd
   name: argocd-redis
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   ports:
   - name: tcp-redis
@@ -2946,6 +2973,7 @@ metadata:
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/part-of: argocd
   name: argocd-repo-server
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   ports:
   - name: server
@@ -2967,6 +2995,7 @@ metadata:
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
   name: argocd-server
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   ports:
   - name: http
@@ -2988,6 +3017,7 @@ metadata:
     app.kubernetes.io/name: argocd-server-metrics
     app.kubernetes.io/part-of: argocd
   name: argocd-server-metrics
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   ports:
   - name: metrics
@@ -3005,6 +3035,7 @@ metadata:
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
   name: argocd-dex-server
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   selector:
     matchLabels:
@@ -3072,6 +3103,7 @@ metadata:
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/part-of: argocd
   name: argocd-redis
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   selector:
     matchLabels:
@@ -3120,6 +3152,7 @@ metadata:
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/part-of: argocd
   name: argocd-repo-server
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   selector:
     matchLabels:
@@ -3307,6 +3340,7 @@ metadata:
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
   name: argocd-server
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   selector:
     matchLabels:
@@ -3549,6 +3583,7 @@ metadata:
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
   name: argocd-application-controller
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   replicas: 1
   selector:
@@ -3719,6 +3754,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: argocd-application-controller-network-policy
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   ingress:
   - from:
@@ -3735,6 +3771,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: argocd-dex-server-network-policy
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   ingress:
   - from:
@@ -3761,6 +3798,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: argocd-redis-network-policy
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   ingress:
   - from:
@@ -3786,6 +3824,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: argocd-repo-server-network-policy
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   ingress:
   - from:
@@ -3815,6 +3854,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: argocd-server-network-policy
+  namespace: "{{ .Values.component.namespace }}"
 spec:
   ingress:
   - {}
