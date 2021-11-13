@@ -1,4 +1,4 @@
-# argocd-test
+# argocd
 
 Based off of https://argo-cd.readthedocs.io/en/stable/getting_started/
 
