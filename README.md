@@ -42,3 +42,22 @@ You can deploy this project 2 different ways.
 
 ## Checking Deploy Status
 `kubectl -n argocd get all`
+
+## Deploying nginx-dummy-app using argocd
+I've put together a small dummy Helm project called using nginx and we can use argocd to deploy it.
+https://github.com/conorjduggan/nginx-dummy-app
+
+### Creating the argocd app
+1. After logging in, click the `+ New App` button.
+2. Fill out the App config with the below values.
+    * Application Name: `nginx-dummy-app`.
+    * Project: `default`.
+    * Sync Policy: `Manual`.
+    * Repository URL: `https://github.com/conorjduggan/nginx-dummy-app.git`.
+    * Revision: `HEAD`.
+    * Path: `.`.
+    * Cluster: `https://kubernetes.default.svc`.
+    * Namespace: `default`.
+3. Click `Create`.
+4. You will now see your app in the argocd UI. Click into it.
+5. Click `Sync` and argocd will deploy nginx-dummy-app. 
